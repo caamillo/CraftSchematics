@@ -1,0 +1,19 @@
+{
+  "name": "craftschematics",
+  "version": "1.0.0",
+  "description": "Plan, Preview, and Perfect your Minecraft redstone circuits. ✨",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caamillo/CraftSchematics.git"
+  },
+  "keywords": [
+    "minecraft",
+    "redstone"
+  ],
+  "author": "caamillo",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/caamillo/CraftSchematics/issues"
+  },
+  "homepage": "https://github.com/caamillo/CraftSchematics#readme"
+}
