@@ -1,5 +1,6 @@
 {
   "name": "craftschematics",
+  "description": "Plan, Preview, and Perfect your Minecraft redstone circuits. ✨",
   "private": true,
   "version": "0.0.0",
   "type": "module",
