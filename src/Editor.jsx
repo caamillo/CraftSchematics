@@ -34,17 +34,23 @@ function Editor() {
 
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
-      75,
+      50,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     )
 
+    const gridHeight = 20
+    const halfFOV = THREE.MathUtils.degToRad(camera.fov / 2)
+    const distanceToGridEdge = (gridHeight / 2) / Math.tan(halfFOV)
+
+    camera.position.set(0, distanceToGridEdge, 0);
+
     renderer.current.setSize( window.innerWidth, window.innerHeight )
     current.appendChild( renderer.current.domElement )
 
     const planeMesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(20, 20),
+      new THREE.PlaneGeometry(gridHeight, gridHeight),
       new THREE.MeshBasicMaterial({
           side: THREE.DoubleSide,
           visible: false
@@ -53,7 +59,7 @@ function Editor() {
     planeMesh.rotateX(-Math.PI / 2)
     scene.add(planeMesh)
 
-    const grid = new THREE.GridHelper(20, 20)
+    const grid = new THREE.GridHelper(gridHeight, gridHeight)
     scene.add(grid)
 
     const highlightMesh = new THREE.Mesh(
@@ -69,8 +75,6 @@ function Editor() {
     scene.add(highlightMesh);
 
     window.addEventListener('mousemove', (e) => highlightEvent(e, camera, planeMesh, highlightMesh));
-
-    camera.position.z = 5;
 
     const controls = new OrbitControls(camera, renderer.current.domElement)
 
@@ -89,7 +93,7 @@ function Editor() {
 
   return (
     <>
-      <div ref={ wrapRender }></div>
+      <div className="wrapRender" ref={ wrapRender }></div>
     </>
   )
 }

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wrapRender > canvas {
+    background-color: red;
+}
