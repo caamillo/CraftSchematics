@@ -2,13 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 // Pages
-import App from './App.jsx'
+import Editor from './Editor.jsx'
 
 // Tailwind
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Editor />
 )
